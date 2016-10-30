@@ -43,3 +43,5 @@ networks:
     rmp_default:
         external: true  
 ```
+## Example app
+[Symfony app docker files](https://gist.github.com/matas-valuzis/4422edc18cb176eb08713e25f4498395)
