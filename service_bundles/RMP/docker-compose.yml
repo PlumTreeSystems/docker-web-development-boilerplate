@@ -1,0 +1,25 @@
+version: '2'
+services:
+    router:
+        image: jwilder/nginx-proxy
+        container_name: nginx-proxy
+        ports:
+          - "80:80"
+        volumes:
+          - /var/run/docker.sock:/tmp/docker.sock:ro
+      
+    mysql:
+        build: ../../external_services/MySQL
+        environment:
+         - MYSQL_ROOT_PASSWORD=root         
+        ports:
+         - "3306:3306"   
+         
+    phpmyadmin:
+        links:
+         - mysql
+        image: phpmyadmin/phpmyadmin        
+        environment:
+         - MYSQL_ROOT_PASSWORD=root
+         - PMA_HOST=mysql
+         - VIRTUAL_HOST=phpmyadmin.local
