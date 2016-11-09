@@ -1,5 +1,12 @@
 version: '2'
 services:
+    mailcather:
+        build: ../../external_services/MailCatcher        
+        ports: 
+          - "1025:25"        
+        environment:
+          - VIRTUAL_HOST=mailcatcher.local
+        
     router:
         image: jwilder/nginx-proxy
         container_name: nginx-proxy
