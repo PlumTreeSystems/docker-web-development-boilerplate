@@ -1,6 +1,6 @@
 version: '2'
 services:
-    mailcather:
+    mailcatcher:
         build: ../../external_services/MailCatcher        
         ports: 
           - "1025:25"        
