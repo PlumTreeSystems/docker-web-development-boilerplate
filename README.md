@@ -7,12 +7,15 @@ Nginx proxy/router allows routing based on domain names.
 2. Enable Shared Drives / Volume Mounting
 3. Clone repository somewhere on the shared drive
 
-# Running Router + MySQL + PhpMyadmin
+# Running Router + MySQL + PhpMyadmin + MailCatcher
 1. Cd PATH_TO_BOILERPLATE/service_bundles
 2. Run docker-compose up -d
-3. Open your hosts file and append new line:
-  127.0.0.1 phpmyadmin.local
-4. You should be able to access phpmyadmin on http://phpmyadmin.local  
+3. Open your hosts file and append new lines:
+  - YOUR_DOCKER_IP phpmyadmin.local
+  - YOUR_DOCKER_IP mailcatcher.local
+4. You should be able to access phpmyadmin on http://phpmyadmin.local and mailcatcher on http://mailcatcher.local
+
+NOTE: YOUR_DOCKER_IP is your docker vm's/network's ip
 
 ## Provide custom domains for your app 
 Add you custom domain inside VIRTUAL_HOST environmental variable
